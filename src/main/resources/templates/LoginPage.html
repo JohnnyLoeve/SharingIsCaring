@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>LoginPage</title>
+    <link rel="stylesheet" th:href="'/style.css'" href="../style.css">
+
 </head>
 <body>
-<h1>Welcome to the login page</h1>
+<a href="/Login">Login</a>
+
+<h2>#SharingIsCaring</h2>
+<h1>Login</h1>
 
 <div th:fragment="content">
     <form name="f" th:action="@{/login}" method="post">

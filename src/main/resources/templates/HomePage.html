@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>MainPage</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" th:href="'/style.css'" href="../style.css">
 </head>
 <body>
-<h1> Welcome to the front page</h1>
+<a href="/HomePage">Home</a>
+
+<h2>#SharingIsCaring</h2>
+<h1>Home</h1>
+
+<!-- Navigate to Login -->
+<div>
+    <a href="/LoginPage">Login</a>
+</div>
+
+<!-- Navigate to Sign Up. -->
+<div>
+    <a href="/CreateUser">Sign Up</a>
+</div>
+
 </body>
 </html>

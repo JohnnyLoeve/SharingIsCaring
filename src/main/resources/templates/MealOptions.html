@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>MealOptions</title>
+    <title>Meal Options</title>
+    <link rel="stylesheet" th:href="'/style.css'" href="../style.css">
+
 </head>
 <body>
+<a href="/MealOptions">MealOptions</a>
+
+<h1>#SharingIsCaring</h1>
+<h2>Meal Options</h2>
+
+<!-- Add new meal option -->
+<a href="/MealOptions">Add a Meal</a>
+
+<!-- Meal table options -->
+<table>
+    </tr>
+    <tr th:each="meal : ${MealOptions}"> <!-- For each loop creates a new meal by iterating through meals -->
+        <th><a th:href="'/MealOptions/meal/' + ${currentPage} + '/' + ${meal.id}" th:text="${meal.name}"></a></th>
+        <th th:text="${meal.price} + '0 DKK'"></th>
+        <th><a th:href="'/MealOptions/editMeal/' + ${meal.getId}">Edit Meal</a></th>
+        <th><a th:href="'/MealOptions/deleteMeal/' + ${meal.getId}">Delete Meal</a></a></th>
+
+    </tr>
+</table>
+
+<!-- Page turn -->
+<div>
+    <span th:if="${showPrev}">
+        <a th:href="'/MealOptions/mealList?page=' + ${currentPage-1}" th:text="Previous"></a>
+    </span>
+    <span th:each="page : ${pages}">
+        <span th:if="${currentPage == page}" th:text="${page}"></span>
+        <a th:if="${currentPage != page}" th:href="'/MealOptions/mealList?page=' + ${page}" th:text="${page}"></a>
+    </span>
+    <span th:if="${showNext}">
+        <a th:href="'/MealOptions/mealList?page=' + ${currentPage+1}" th:text="Next"></a>
+    </span>
+</div>
+
+<!-- Logged in as + Logout-->
+<div>
+    <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>
+    <form th:action="@{/Logout}" method="post">
+        <input type="submit" value="Logout"/>
+    </form>
+</div>
 
 </body>
 </html>
