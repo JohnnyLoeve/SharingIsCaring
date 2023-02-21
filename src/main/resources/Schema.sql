@@ -3,12 +3,13 @@ CREATE TABLE createAMeal(
   name VARCHAR(64) NOT NULL,
   description VARCHAR(MAX),
   price BIGINT NOT NULL,
-  link VARCHAR(MAX),
-  img VARCHAR(MAX)
+  link VARCHAR(MAX)
+
 );
 
-CREATE TABLE user(
-  id BIGINT AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(64),
-  password VARCHAR(64)
+CREATE TABLE UserProfile(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(64) NOT NULL,
+username VARCHAR(64),
+password VARCHAR(64)
 );

@@ -3,48 +3,47 @@ package com.example.SharingIsCaring;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
 
     @Autowired
-    UserRepo createUserRepo;
+    UserRepo userRepo;
 
     //GetMapping for HomePage
-    @GetMapping("/")
-    public String mainPage(){
-
-        return"MainPage";
+    @GetMapping("/HomePage")
+    public String mainPage(Model model){
+    UserProfile userProfile = new UserProfile(3L, "Dude", "Duden", "123");
+        model.addAttribute("userProfile", userProfile);
+        return"HomePage";
     }
 
     //GetMapping for CreateUser
     @GetMapping("/CreateUser")
     public String createUser(Model model){
-        model.addAttribute("CreateUser", new User());
+        model.addAttribute("CreateUser", new UserProfile());
         return "CreateUser";
     }
 //    PostMapping for CreateUser
     @PostMapping("/CreateUser")
-    public  String createUser(@ModelAttribute User createUser){
-    createUserRepo.save(createUser);
+    public  String createUser(@ModelAttribute UserProfile createUser){
+    userRepo.save(createUser);
         return "redirect:/Account";
     }
 
     //GetMapping for Login
     @GetMapping("/LoginPage")
-    public String loginPage(){
-
+    public String loginPage(Model model, @ModelAttribute UserProfile userProfile){
+    model.addAttribute("userProfile", userProfile);
         return "LoginPage";
     }
 
     //@PostMapping("/LoginPage")
     @PostMapping("/LoginPage")
-    public String loginSucces(){
-
-        return "/";
+    public String loginPage(Model model, @RequestParam String username, @RequestParam String password){
+        userRepo.login(username,password);
+        return "/HomePage";
     }
 
 //    public String Login(){
@@ -73,14 +72,14 @@ public class MainController {
     //@GetMapping("/ContactForm")
     @GetMapping("/ContactForm")
     public String showForm(Model model) {
-    User user = new User();
+    UserProfile user = new UserProfile();
     model.addAttribute("user", user);
         return "ContactForm";
     }
 
     //@PostMapping("/ContactForm")
     @PostMapping("/ContactForm")
-    public String submitForm(@ModelAttribute("user") User user) {
+    public String submitForm(@ModelAttribute("user") UserProfile user) {
         System.out.println(user);
         return "redirect:/";
     }

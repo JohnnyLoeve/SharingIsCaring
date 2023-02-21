@@ -24,25 +24,24 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests((requests) -> requests
+                .authorizeHttpRequests()
                         .requestMatchers("/Account", "/", "/CreateAMeal", "/CreateUser", "/ContactForm", "/LoginPage", "/MealOptions", "/media/**", "/scripts/**", "/styles/**").permitAll()
+                .requestMatchers("/admin").hasRole("ADMIN")
                         .anyRequest().authenticated()
-                )
-                .formLogin((form) -> form
-                        .loginPage("/LoginPage")
-                        .permitAll()
-                )
-                .logout((logout) -> logout.permitAll());
+                .and()
+                .formLogin()
+                .loginPage("/LoginPage").defaultSuccessUrl("/HomePage", true)
+                .permitAll();
 
-                //.httpBasic(withDefaults());
-        return http.build();
+                return http.build();
+
     }
 
     @Bean
     public UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withDefaultPasswordEncoder().username("Lisa").password("123").roles("USER").build());
-        manager.createUser(User.withDefaultPasswordEncoder().username("Sion").password("123").roles("USER").build());
+        manager.createUser(User.withDefaultPasswordEncoder().username("Lisa").password("123").roles("ADMIN").build());
+        manager.createUser(User.withDefaultPasswordEncoder().username("Sion").password("123").roles("ADMIN").build());
         return manager;
     }
 }

@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
+public class UserProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // id of newUser
@@ -16,10 +16,10 @@ public class User {
 
     //do we need an empty constructor ?
 
-    public User() {
+    public UserProfile() {
     }
 
-    public User(Long id, String name, String username, String password) {
+    public UserProfile(Long id, String name, String username, String password) {
         this.id = id;
         this.name = name;
         this.username = username;
