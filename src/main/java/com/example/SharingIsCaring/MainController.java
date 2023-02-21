@@ -38,6 +38,11 @@ public class MainController {
         return "LoginPage";
     }
 
+    @PostMapping("/LoginPage")
+    public String loginSucces(){
+        return "/";
+    }
+
     //PostMapping for Login
 //    @PostMapping("/LoginPage")
 //    public String Login(){
@@ -67,11 +72,11 @@ public class MainController {
 //    return "ContactForm";
 //    }
 
-    @PostMapping("/ContactForm")
-    public String contactForm(@ModelAttribute ){
-
-    return "redirect:/";
-    }
+//    @PostMapping("/ContactForm")
+//    public String contactForm(@ModelAttribute ){
+//
+//    return "redirect:/";
+//    }
     //GetMapping for ContactForm
     //PostMapping for ContactForm
 
