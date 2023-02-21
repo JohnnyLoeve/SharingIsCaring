@@ -16,6 +16,7 @@ public class MainController {
     //GetMapping for HomePage
     @GetMapping("/")
     public String mainPage(){
+
         return"MainPage";
     }
 
@@ -35,16 +36,17 @@ public class MainController {
     //GetMapping for Login
     @GetMapping("/LoginPage")
     public String loginPage(){
+
         return "LoginPage";
     }
 
+    //@PostMapping("/LoginPage")
     @PostMapping("/LoginPage")
     public String loginSucces(){
+
         return "/";
     }
 
-    //PostMapping for Login
-//    @PostMapping("/LoginPage")
 //    public String Login(){
 //    }
     //GetMapping for Logout
@@ -53,9 +55,9 @@ public class MainController {
     //GetMapping for Account
     @GetMapping("/Account")
     public String account (){
+
         return "Account";
     }
-
 
 
     //(Use an "id" to get the propper user, and/or meal)
@@ -64,21 +66,24 @@ public class MainController {
     //GetMapping for MealOptions
     @GetMapping("/MealOptions")
     public String mealOptions (){
+
         return "MealOptions";
     }
 
-//    @GetMapping("/ContactForm")
-//    public String contactForm(){
-//    return "ContactForm";
-//    }
+    //@GetMapping("/ContactForm")
+    @GetMapping("/ContactForm")
+    public String showForm(Model model) {
+    User user = new User();
+    model.addAttribute("user", user);
+        return "ContactForm";
+    }
 
-//    @PostMapping("/ContactForm")
-//    public String contactForm(@ModelAttribute ){
-//
-//    return "redirect:/";
-//    }
-    //GetMapping for ContactForm
-    //PostMapping for ContactForm
+    //@PostMapping("/ContactForm")
+    @PostMapping("/ContactForm")
+    public String submitForm(@ModelAttribute("user") User user) {
+        System.out.println(user);
+        return "redirect:/";
+    }
 
 
     //GetMapping for CreateAMeal
