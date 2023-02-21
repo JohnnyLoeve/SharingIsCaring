@@ -24,11 +24,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests()
-                        .requestMatchers("/Account", "/", "/CreateAMeal", "/CreateUser", "/ContactForm", "/LoginPage", "/MealOptions", "/media/**", "/scripts/**", "/styles/**").permitAll()
+                .authorizeHttpRequests().requestMatchers("/HomePage").anonymous()
+                        .requestMatchers("/Account", "/HomePage","/", "/CreateAMeal", "/CreateUser", "/ContactForm", "/LoginPage", "/MealOptions", "/media/**", "/scripts/**", "/styles/**").permitAll()
                 .requestMatchers("/admin").hasRole("ADMIN")
                         .anyRequest().authenticated()
+
                 .and()
+
                 .formLogin()
                 .loginPage("/LoginPage").defaultSuccessUrl("/HomePage", true)
                 .permitAll();
