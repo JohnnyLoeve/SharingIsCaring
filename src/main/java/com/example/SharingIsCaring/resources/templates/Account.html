@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Account</title>
+    <link rel="stylesheet" th:href="'/style.css'" href="../style.css">
 </head>
 <body>
+<a href="/Account">Account</a>
+
+<h1>#SharingIsCaring</h1>
+<h2 th:text="${meal.getName}"></h2>
+
+<table>
+    <tr>
+        <th></th>
+        <th th:text="${meal.getDescription}"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th th:text="${meal.getPrice} + '0 DKK'"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th><a th:href="${meal.link}">Buy here</a></th>
+    </tr>
+    <!--<tr>
+        <th></th>
+        <th th:text="${meal.getImg}"></th>
+    </tr>-->
+</table>
+
+<div>
+    <p><a th:href="'/Account/editMeal/' + ${meal.getId}">Edit</a></p>
+</div>
+<div>
+    <p><a th:href="'/Account/deleteMeal/' + ${meal.getId}">Delete</a></p>
+</div>
+<div>
+    <p><a th:href="'/Account/CreateAMeal?page=' + ${page}">Back to create a meal</a></p>
+</div>
 
 </body>
 </html>
