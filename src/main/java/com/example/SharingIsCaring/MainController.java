@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MainController {
 
     @Autowired
-    CreateUserRepo createUserRepo;
+    UserRepo createUserRepo;
 
     //GetMapping for HomePage
     @GetMapping("/")
@@ -22,12 +22,12 @@ public class MainController {
     //GetMapping for CreateUser
     @GetMapping("/CreateUser")
     public String createUser(Model model){
-        model.addAttribute("CreateUser", new CreateUser());
+        model.addAttribute("CreateUser", new User());
         return "CreateUser";
     }
 //    PostMapping for CreateUser
     @PostMapping("/CreateUser")
-    public  String createUser(@ModelAttribute CreateUser createUser){
+    public  String createUser(@ModelAttribute User createUser){
     createUserRepo.save(createUser);
         return "redirect:/Account";
     }
@@ -44,18 +44,34 @@ public class MainController {
 //    }
     //GetMapping for Logout
 
+
+    //GetMapping for Account
     @GetMapping("/Account")
     public String account (){
         return "Account";
     }
 
-    //GetMapping for Account
+
+
     //(Use an "id" to get the propper user, and/or meal)
 
 
     //GetMapping for MealOptions
+    @GetMapping("/MealOptions")
+    public String mealOptions (){
+        return "MealOptions";
+    }
 
+//    @GetMapping("/ContactForm")
+//    public String contactForm(){
+//    return "ContactForm";
+//    }
 
+    @PostMapping("/ContactForm")
+    public String contactForm(@ModelAttribute ){
+
+    return "redirect:/";
+    }
     //GetMapping for ContactForm
     //PostMapping for ContactForm
 

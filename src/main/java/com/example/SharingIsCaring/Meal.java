@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class CreateAMeal {
+public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -18,7 +18,7 @@ public class CreateAMeal {
 
     //do we need another empty constructor for security ??
 
-    public CreateAMeal(Long id, String name, String description, Double price, String img) {
+    public Meal(Long id, String name, String description, Double price, String img) {
         this.id = id;
         this.name = name;
         this.description = description;
