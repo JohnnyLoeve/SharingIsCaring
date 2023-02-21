@@ -15,6 +15,9 @@ public class CreateUser {
 
     //do we need an empty constructor ?
 
+    public CreateUser(){
+
+    }
     public CreateUser(Long id, String username, String password) {
         this.id = id;
         this.username = username;
