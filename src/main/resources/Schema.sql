@@ -7,7 +7,7 @@ CREATE TABLE createAMeal(
   img VARCHAR(MAX)
 );
 
-CREATE TABLE createUser(
+CREATE TABLE user(
   id BIGINT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(64),
   password VARCHAR(64)

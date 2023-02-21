@@ -11,6 +11,24 @@
 <h1>#SharingIsCaring</h1>
 <h2 th:text="${meal.getName}"></h2>
 
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Find a Meal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Create User</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <table>
     <tr>
         <th></th>
@@ -38,6 +56,11 @@
 </div>
 <div>
     <p><a th:href="'/Account/CreateAMeal?page=' + ${page}">Back to create a meal</a></p>
+</div>
+
+
+<div class="mt-5 p-4 bg-light text-black text-center">
+    <p>Footer</p>
 </div>
 
 </body>
