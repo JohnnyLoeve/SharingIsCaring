@@ -13,7 +13,7 @@
 <h1>Login</h1>
 
 <div th:fragment="content">
-    <form  th:action="@{/LoginPage}" method="POST">
+    <form  th:object="${userProfile}" th:action="@{/LoginPage}" method="POST">
         <fieldset >
             <legend>Please Login</legend>
 <!--            <div th:if="${param.error}" class="alert alert-error">-->
@@ -23,9 +23,9 @@
 <!--                You have been logged out.-->
 <!--            </div>-->
             <label>Username</label>
-            <input type="text" name="username" />
+            <input type="text" th:field="*{username}" name="username" />
             <label>Password</label>
-            <input type="password" name="password"/>
+            <input type="password" th:field="*{password}" name="password"/>
             <div class="form-actions">
                 <button type="submit" value="Log in" class="btn">Log in</button>
             </div>

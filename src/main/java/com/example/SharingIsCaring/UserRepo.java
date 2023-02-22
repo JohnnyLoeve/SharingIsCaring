@@ -14,7 +14,6 @@ public interface UserRepo extends CrudRepository <UserProfile, Long> {
     Optional <UserProfile> login(
             String username,
             String password
-
     );
 
 }

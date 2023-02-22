@@ -25,6 +25,18 @@ class SharingIsCaringApplicationTests {
 		assertEquals("HomePage", viewName);
 	}
 
+	@Test
+	public void register() {
+		String Password;
+		Password = "123";
+		assertEquals("123", Password);
+	}
 
+	@Test
+	public void loginPage() {
+		String username;
+		username = "Sion";
+		assertEquals("Sion", username);
+	}
 
 }

@@ -1,6 +1,7 @@
 package com.example.SharingIsCaring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -34,18 +35,18 @@ public class MainController {
 
     //GetMapping for Login
     @GetMapping("/LoginPage")
-    public String loginPage(){
-//    model.addAttribute("userProfile", userProfile);
+    public String loginPage(Model model, @ModelAttribute UserProfile userProfile){
+    model.addAttribute("userProfile", userProfile);
         return "LoginPage";
     }
 
-    //@PostMapping("/LoginPage")
-//    @PostMapping("/LoginPage")
-//    public String login(Model model, @ModelAttribute UserProfile userProfile){
-//        System.out.println(userRepo.login(userProfile.getUsername(), userProfile.getPassword()));
-//        System.out.println(userProfile);
-//        return "/HomePage";
-//    }
+
+    @PostMapping("/LoginPage")
+    public String login(Model model, @ModelAttribute UserProfile userProfile){
+       userRepo.login(userProfile.getUsername(), userProfile.getPassword());
+
+        return "/HomePage";
+    }
 
 //    public String Login(){
 //    }
@@ -97,4 +98,9 @@ public class MainController {
     //GetMapping for DeleteAMeal
 
 
+    @GetMapping("/h2")
+    public String h2(){
+
+        return "/h2-console";
+    }
 }

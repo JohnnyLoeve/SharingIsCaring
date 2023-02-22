@@ -4,3 +4,4 @@ INSERT INTO createAMeal (name, description, price) VALUES ('Meatloaf', 'American
 
 INSERT INTO UserProfile (name, username, password, role) VALUES('Lisa', 'Lisa', '123', 'ADMIN');
 INSERT INTO UserProfile (name, username, password, role) VALUES('Sion', 'Sion', '123', 'ADMIN');
+INSERT INTO UserProfile (name, username, password, role) VALUES('Johnny', 'Johnny', '123', 'ADMIN');
