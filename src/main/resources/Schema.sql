@@ -11,5 +11,6 @@ CREATE TABLE UserProfile(
 id BIGINT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(64) NOT NULL,
 username VARCHAR(64),
-password VARCHAR(64)
+password VARCHAR(64),
+role VARCHAR(64)
 );

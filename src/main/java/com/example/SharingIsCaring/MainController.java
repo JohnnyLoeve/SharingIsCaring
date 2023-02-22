@@ -14,7 +14,7 @@ public class MainController {
     //GetMapping for HomePage
     @GetMapping("/HomePage")
     public String mainPage(Model model){
-    UserProfile userProfile = new UserProfile(3L, "Dude", "Duden", "123");
+    UserProfile userProfile = new UserProfile(3L, "Dude", "Duden", "123", "ADMIN");
         model.addAttribute("userProfile", userProfile);
         return"HomePage";
     }
@@ -34,17 +34,18 @@ public class MainController {
 
     //GetMapping for Login
     @GetMapping("/LoginPage")
-    public String loginPage(Model model, @ModelAttribute UserProfile userProfile){
-    model.addAttribute("userProfile", userProfile);
+    public String loginPage(){
+//    model.addAttribute("userProfile", userProfile);
         return "LoginPage";
     }
 
     //@PostMapping("/LoginPage")
-    @PostMapping("/LoginPage")
-    public String loginPage(Model model, @RequestParam String username, @RequestParam String password){
-        userRepo.login(username,password);
-        return "/HomePage";
-    }
+//    @PostMapping("/LoginPage")
+//    public String login(Model model, @ModelAttribute UserProfile userProfile){
+//        System.out.println(userRepo.login(userProfile.getUsername(), userProfile.getPassword()));
+//        System.out.println(userProfile);
+//        return "/HomePage";
+//    }
 
 //    public String Login(){
 //    }

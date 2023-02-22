@@ -13,17 +13,20 @@ public class UserProfile {
     private String name;
     private String username;
     private String password;
+    private String role;
 
-    //do we need an empty constructor ?
+
+//do we need an empty constructor ?
 
     public UserProfile() {
     }
 
-    public UserProfile(Long id, String name, String username, String password) {
+    public UserProfile(Long id, String name, String username, String password, String role) {
         this.id = id;
         this.name = name;
         this.username = username;
         this.password = password;
+        this.role = role;
     }
 
     public Long getId() {
@@ -57,4 +60,13 @@ public class UserProfile {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
 }
