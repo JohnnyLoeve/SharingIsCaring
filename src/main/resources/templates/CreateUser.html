@@ -30,15 +30,16 @@
     </div>
 </nav>
 
-<form action="/CreateUser" th:object="${CreateUser}" method="POST">
-    <div><label>Username: <input type="username" th:field="*{username}"/></label></div>
-    <div><label>Password: <input type="password" th:field="*{password}"/></label></div>
+<form  th:object="${CreateUser}" action="/save" method="post">
+    <div><label>name: <input type="text" field="*{name}" name="name"/></label></div>
+    <div><label>Username: <input type="text" field="*{username}" name="username"/></label></div>
+    <div><label>Password: <input type="password" field="*{password}" name="password"/></label></div>
     <div><input th:if="${id != null}" type="hidden" th:field="*{id}"/></div>
     <div><input type="submit" value="Create User"></div>
 </form>
 
 <!-- Navigate back to front page -->
-<a href="/CreateUser">Back</a>
+<a href="/HomePage">Back</a>
 
 
 <!--Footer-->

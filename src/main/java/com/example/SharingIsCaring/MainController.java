@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLOutput;
+
 @Controller
 public class MainController {
 
@@ -22,15 +24,17 @@ public class MainController {
 
     //GetMapping for CreateUser
     @GetMapping("/CreateUser")
-    public String createUser(Model model){
+    public String CreateUser(Model model){
         model.addAttribute("CreateUser", new UserProfile());
+        System.out.println("creating user");
         return "CreateUser";
     }
 //    PostMapping for CreateUser
-    @PostMapping("/CreateUser")
-    public  String createUser(@ModelAttribute UserProfile createUser){
-    userRepo.save(createUser);
-        return "redirect:/Account";
+    @PostMapping("/save")
+    public  String CreateUser(@ModelAttribute UserProfile CreateUser){
+        System.out.println("Trying to create user");
+        userRepo.save(CreateUser);
+        return "/HomePage";
     }
 
     //GetMapping for Login
@@ -44,7 +48,6 @@ public class MainController {
     @PostMapping("/LoginPage")
     public String login(Model model, @ModelAttribute UserProfile userProfile){
        userRepo.login(userProfile.getUsername(), userProfile.getPassword());
-
         return "/HomePage";
     }
 

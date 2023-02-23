@@ -1,26 +1,15 @@
 package com.example.SharingIsCaring;
 
-import jakarta.servlet.Servlet;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-
-import java.io.IOException;
 
 @Configuration
 @EnableWebSecurity
@@ -52,8 +41,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests()
-                .requestMatchers("/HomePage", "/LoginPage", "/CreateUser", "/MealOptions", "/media/**", "/scripts/**", "/styles/**", "/h2", "/h2-console", "/h2/**").permitAll()
-
+                .requestMatchers("/static/media/sicscript.js", "/HomePage", "/LoginPage", "/CreateUser", "/MealOptions", "/media/**", "/scripts/**", "/styles/**", "/h2", "/h2-console", "/h2/**").permitAll()
+                .requestMatchers("/resources/**").permitAll()
                 .requestMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
@@ -61,9 +50,10 @@ public class SecurityConfig {
                 .loginPage("/LoginPage").defaultSuccessUrl("/HomePage", true)
                 .permitAll()
                 .and()
-                .headers()
-                .frameOptions().sameOrigin() // allow H2 console to be embedded in an iframe
-                .httpStrictTransportSecurity().disable(); // disable HSTS to allow access over plain HTTP
+                .headers().frameOptions().sameOrigin()
+                .and()
+                .csrf().disable();
+
 
         return http.build();
     }
