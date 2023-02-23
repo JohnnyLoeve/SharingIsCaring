@@ -6,13 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
 import java.sql.SQLOutput;
+import java.util.List;
 
 @Controller
 public class MainController {
 
     @Autowired
     UserRepo userRepo;
+
+    @Autowired
+    MealRepo mealRepo;
 
     //GetMapping for HomePage
     @GetMapping("/HomePage")
@@ -58,8 +63,9 @@ public class MainController {
 
     //GetMapping for Account
     @GetMapping("/Account")
-    public String account (){
-
+    public String account (Model model){
+        List<Meal> meals = (List)mealRepo.findAll();
+        model.addAttribute("meals", meals);
         return "Account";
     }
 
@@ -91,9 +97,30 @@ public class MainController {
 
 
     //GetMapping for CreateAMeal
-
+    @GetMapping("/CreateAMeal")
+    public String createAMeal(){
+        return "/CreateAMeal";
+    }
     //PostMapping for CreateAMeal (for at gemme måltidet)
+    @PostMapping("/CreateAMeal")
+    public String createAMeal(){
 
+    }
+
+
+//    @GetMapping("/CreateUser")
+//    public String CreateUser(Model model){
+//        model.addAttribute("CreateUser", new UserProfile());
+//        System.out.println("creating user");
+//        return "CreateUser";
+//    }
+//    //    PostMapping for CreateUser
+//    @PostMapping("/save")
+//    public  String CreateUser(@ModelAttribute UserProfile CreateUser){
+//        System.out.println("Trying to create user");
+//        userRepo.save(CreateUser);
+//        return "/HomePage";
+//    }
     //GetMapping for EditMeal
 
     //PostMapping for EditMeal (Eller bare gøre brug af postmapping fra create a meal)
@@ -101,9 +128,5 @@ public class MainController {
     //GetMapping for DeleteAMeal
 
 
-    @GetMapping("/h2")
-    public String h2(){
 
-        return "/h2-console";
-    }
 }

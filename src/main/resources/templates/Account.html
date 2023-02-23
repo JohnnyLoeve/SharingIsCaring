@@ -13,7 +13,7 @@
 </div>
 
 
-<h2 th:text="${Meal.getName}"></h2>
+
 
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
     <div class="container-fluid">
@@ -33,12 +33,25 @@
         </ul>
     </div>
 </nav>
-<table>
-    <tr>
-        <th></th>
-        <th th:text="${Meal.getDescription}"></th>
+
+<div>
+    <tr th:each="meals : ${meals}">
+        <b><th th:text="${meals.getName}"></th></b>
+        <br/>
+        <th th:text="${meals.getDescription}"></th>
+        <br/>
+        <th th:text="${meals.getPrice}"></th>
+        <br/>
     </tr>
-    <tr>
+</div>
+
+<table>
+<!--    <h2 th:text="${Meal.getName}"></h2>-->
+<!--    <tr>-->
+<!--        <th></th>-->
+<!--        <th th:text="${Meal.getDescription}"></th>-->
+<!--    </tr>-->
+<!--    <tr>-->
         <!--
         <th></th>
         <th th:text="${meal.getPrice} + '0 DKK'"></th>
