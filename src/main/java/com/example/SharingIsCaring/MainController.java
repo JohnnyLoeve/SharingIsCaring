@@ -64,8 +64,8 @@ public class MainController {
     //GetMapping for Account
     @GetMapping("/Account")
     public String account (Model model){
-        List<Meal> meals = (List)mealRepo.findAll();
-        model.addAttribute("meals", meals);
+//        List<Meal> meals = (List)mealRepo.findAll();
+//        model.addAttribute("meals", meals);
         return "Account";
     }
 
@@ -75,8 +75,9 @@ public class MainController {
 
     //GetMapping for MealOptions
     @GetMapping("/MealOptions")
-    public String mealOptions (){
-
+    public String mealOptions (Model model){
+        List<Meal> meals = (List)mealRepo.findAll();
+        model.addAttribute("meals", meals);
         return "MealOptions";
     }
 
@@ -98,7 +99,8 @@ public class MainController {
 
     //GetMapping for CreateAMeal
     @GetMapping("/CreateAMeal")
-    public String createAMeal(){
+    public String createAMeal(Model model){
+        model.addAttribute("CreateAMeal", new Meal());
         return "/CreateAMeal";
     }
     //PostMapping for CreateAMeal (for at gemme måltidet)
@@ -109,25 +111,20 @@ public class MainController {
     }
 
 
-//    @GetMapping("/CreateUser")
-//    public String CreateUser(Model model){
-//        model.addAttribute("CreateUser", new UserProfile());
-//        System.out.println("creating user");
-//        return "CreateUser";
-//    }
-//    //    PostMapping for CreateUser
-//    @PostMapping("/save")
-//    public  String CreateUser(@ModelAttribute UserProfile CreateUser){
-//        System.out.println("Trying to create user");
-//        userRepo.save(CreateUser);
-//        return "/HomePage";
-//    }
     //GetMapping for EditMeal
 
     //PostMapping for EditMeal (Eller bare gøre brug af postmapping fra create a meal)
-
+//    @GetMapping("/meals/edit/{Id}")
+//    public String editMeal(@PathVariable Long id) {
+//        mealRepo.save(mealRepo.findById(id));
+//        return "redirect:/MealOptions";
+//    }
     //GetMapping for DeleteAMeal
-
+//    @GetMapping("/meals/delete/{Id}")
+//    public String deleteMeal(@PathVariable Long id) {
+//        mealRepo.delete(mealRepo.findById(id));
+//        return "redirect:/MealOptions";
+//    }
 
 
 }
