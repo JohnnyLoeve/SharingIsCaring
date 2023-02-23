@@ -103,8 +103,9 @@ public class MainController {
     }
     //PostMapping for CreateAMeal (for at gemme måltidet)
     @PostMapping("/CreateAMeal")
-    public String createAMeal(){
-
+    public String createAMeal(@ModelAttribute Meal meal){
+    mealRepo.save(meal);
+    return "/MealOptions";
     }
 
 
