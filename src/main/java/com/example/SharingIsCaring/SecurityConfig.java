@@ -41,7 +41,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests()
-                .requestMatchers("/static/media/sicscript.js", "/HomePage", "/LoginPage", "/CreateUser", "/MealOptions", "/media/**", "/scripts/**", "/styles/**", "/h2", "/h2-console", "/h2/**").permitAll()
+                .requestMatchers("/static/scripts/sicscript.js", "/HomePage", "/LoginPage", "/CreateUser", "/MealOptions", "/media/**", "/scripts/**", "/styles/**", "/h2", "/h2-console", "/h2/**").permitAll()
                 .requestMatchers("/resources/**").permitAll()
                 .requestMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
