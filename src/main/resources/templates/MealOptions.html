@@ -31,48 +31,25 @@
     </div>
 </nav>
 
-<!-- Add new meal option -->
-<a href="/MealOptions">Add a Meal</a>
+<div class="row">
 
-
-<div class="row" >
-    <div class="col-md-4">
-        <div class=" p-5">
-            <h5>Homemade wok with chicken, rice and brocolli</h5>
-            <img class="col-12 rounded" src="https://cdn.tourismontheedge.com/wp-content/uploads/2021/09/food-rice.jpg">
+    <tr th:each="meals : ${meal}">
+        <div class="col-md-4 ">
+            <div class=" p-5">
+            <h5 th:text="${meals.name}" class="text-center"></h5>
+            <br>
+            <img class="col-12 rounded"  th:src="${meals.img}"/>
+            <br>
+            <th th:text="${meals.description}"></th>
+            <br>
+            <th th:text="${meals.price}"></th>
+            <br>
             <button class="btn btn-success btn-sm mt-3" href="/HomePage">Buy meal</button>
+            </div>
         </div>
-
-    </div>
-    <div class="col-md-4">
-        <div class=" p-5">
-            <h5>Mashed potatoes with peas and beans</h5>
-            <img class="col-12 rounded" src="https://i.insider.com/5d6560326f24eb145d1b587d?width=1000&format=jpeg&auto=webp">
-            <button class="btn btn-success btn-sm mt-3" href="/HomePage">Buy meal</button>
-        </div>
-
-    </div>
-
-    <div class="col-md-4">
-        <div class=" p-5">
-            <h5>Tortilla with everything, ready and packed</h5>
-            <img class="col-12 rounded" src="https://www.nammadabba.com/images/vendor/1621533179.jpg">
-            <button class="btn btn-success btn-sm mt-3" href="/HomePage">Buy meal</button>
-        </div>
-
-    </div>
+    </tr>
 
 </div>
-
-
-
-
-
-
-
-
-
-
 
 <!-- Meal table options -->
 <!--<table>-->

@@ -38,8 +38,13 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests()
-                .requestMatchers("/static/scripts/sicscript.js", "/HomePage", "/LoginPage", "/CreateUser", "/MealOptions", "/media/**", "/scripts/**", "/styles/**", "/h2", "/h2-console", "/h2/**").permitAll()
-                .requestMatchers("/resources/**").permitAll()
+                //Permits resources
+                .requestMatchers("/static/scripts/sicscript.js", "/media/**", "/scripts/**", "/styles/**", "/resources/**").permitAll()
+                //permits sites for visitors without login
+                .requestMatchers("/ContactForm","/HomePage", "/LoginPage", "/CreateUser", "/MealOptions").permitAll()
+                //permits the h2 database
+                .requestMatchers("/h2", "/h2-console", "/h2/**").permitAll()
+                //the rest is only permitted while logged in as ADMIN
                 .requestMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()

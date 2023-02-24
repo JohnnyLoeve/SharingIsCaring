@@ -79,15 +79,11 @@ public class MainController {
         return "Account";
     }
 
-
-    //(Use an "id" to get the propper user, and/or meal)
-
-
-    //GetMapping for MealOptions
     @GetMapping("/MealOptions")
     public String mealOptions (Model model){
-//        List<Meal> meals = (List)mealRepo.findAll();
-//        model.addAttribute("meals", meals);
+        List<Meal> meal = (List)mealRepo.findAll();
+        model.addAttribute("meal", meal);
+        System.out.println("Trying to return meals");
         return "MealOptions";
     }
 
