@@ -12,4 +12,9 @@ id BIGINT AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(64) NOT NULL,
 username VARCHAR(64),
 password VARCHAR(64)
+email VARCHAR(64),
+address VARCHAR(64),
+phone VARCHAR(64),
+country VARCHAR(64),
+postcode VARCHAR(64),
 );

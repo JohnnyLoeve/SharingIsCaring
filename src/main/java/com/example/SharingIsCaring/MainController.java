@@ -22,8 +22,6 @@ public class MainController {
     //GetMapping for HomePage
     @GetMapping("/HomePage")
     public String mainPage(Model model){
-    UserProfile userProfile = new UserProfile(3L, "Dude", "Duden", "123");
-        model.addAttribute("userProfile", userProfile);
         return"HomePage";
     }
 
@@ -108,7 +106,6 @@ public class MainController {
         return "redirect:/";
     }
 
-
     //GetMapping for CreateAMeal
     @GetMapping("/CreateAMeal")
     public String createAMeal(Model model){
@@ -121,7 +118,6 @@ public class MainController {
     mealRepo.save(meal);
     return "/MealOptions";
     }
-
 
 
     //GetMapping for EditMeal

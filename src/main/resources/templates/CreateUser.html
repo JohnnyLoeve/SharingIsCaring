@@ -35,60 +35,47 @@
 
     <div class="container rounded bg-white mt-5 mb-5">
         <div class="row">
-            <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Sion</span><span class="text-black-50">Sion@mail.com</span><span> </span>
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="col-md-3 border-right"></div>
+            <div class="col-md-7 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <form action="/CreateUser/saveUser" th:object="${UserProfile}" method="POST">
+                        <h4 class="text-right">Sign Up</h4>
 
-            <div class="text-center" th:fragment="content">
-                <form action="/CreateUser/saveUser" th:object="${UserProfile}" method="POST">
-                    <fieldset>
-                        <legend class="pt-4">Create a User</legend>
-                        <label class="pt-1">Your name is:</label> <br>
-                        <input type="text" field="*{name}" name="name" class="rounded" placeholder="Enter your name" /> <br>
-                        <label class="pt-1">Choose a username</label> <br>
-                        <input type="text" field="*{username}" name="username" class="rounded" placeholder="Enter username" /> <br>
-                        <label class="pt-1">Choose your password</label> <br>
-                        <input type="password" field="*{password}" name="password" class="rounded" placeholder="Enter password" /> <br>
+                        <fieldset>
+
+                            <div class="row mt-2">
+                                <label class="labels">Your name:</label><br>
+                            <div class="col-md-10"><input type="text" field="*{name}" class="form-control" name="name" placeholder="Enter your name" value=""/></div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <label class="labels">Choose a username:</label><br>
+                                <div class="col-md-10"><input type="text" field="*{username}" name="username" class="form-control" placeholder="Enter username" value=""/> </br></div>
+                        <label class="labels">Choose your password:</label>
+                                    <div class="col-md-10"><input type="text" field="*{password}" name="password" class="form-control" placeholder="Enter your password" value=""/> <br></div>
+                        <label class="labels">Address:</label>
+                                    <div class="col-md-10"><input type="text" field="*{address}" name="address" class="form-control" placeholder="Enter your address" value=""/> <br></div>
+                        <label class="labels">Postcode:</label>
+                                    <div class="col-md-10"><input type="text" field="*{postcode}" name="postcode" class="form-control" placeholder="Enter your postcode" value=""/> <br></div>
+                        <label class="labels">Country:</label>
+                                    <div class="col-md-10"><input type="text" field="*{country}" name="country" class="form-control" placeholder="Enter your country" value=""/> <br></div>
+                        <label class="labels">Phone:</label>
+                                    <div class="col-md-10"><input type="text" field="*{phone}" name="phone" class="form-control" placeholder="Enter your phone" value=""/> <br></div>
+                        <label class="labels">Email:</label>
+                                    <div class="col-md-10"><input type="text" field="*{email}" name="email" class="form-control" placeholder="Enter your email" value=""/> <br></div>
                         <input if="${UserProfile.id != null}" type="hidden" field="*{id}"/> <!--Adds a secret id-->
+                                </div>
+
                         <div class="form-actions">
-                            <input type="submit" value="Create user">
+                        <label class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit" value="Create user">Sign Up!</button></label>
                         </div>
                     </fieldset>
                 </form>
             </div>
-
-
-
-<!--            <div class="col-md-5 border-right">-->
-<!--                <div class="p-3 py-5">-->
-<!--                    <div class="d-flex justify-content-between align-items-center mb-3">-->
-<!--                        <h4 class="text-right">Profile Settings</h4>-->
-<!--                    </div>-->
-<!--                    <div class="row mt-2">-->
-<!--                        <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="enter name" value=""></div>-->
-<!--                    </div>-->
-<!--                    <div class="row mt-3">-->
-<!--                        <div class="col-md-12"><label class="labels">Phone:</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>-->
-<!--                        <div class="col-md-12"><label class="labels">Address:</label><input type="text" class="form-control" placeholder="enter address" value=""></div>-->
-<!--                        <div class="col-md-12"><label class="labels">Postcode:</label><input type="text" class="form-control" placeholder="enter postcode" value=""></div>-->
-<!--                        <div class="col-md-12"><label class="labels">Country:</label><input type="text" class="form-control" placeholder="enter country" value=""></div>-->
-<!--                        <div class="col-md-12"><label class="labels">Email:</label><input type="text" class="form-control" placeholder="enter email" value=""></div>-->
-<!--                    </div>-->
-<!--                    <div class="row mt-3">-->
-<!--                        <div class="col-md-12"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>-->
-<!--                    </div>-->
-<!--                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Sign Up!</button></div>-->
-<!--                    <div class="mt-5 text-center"><button href="/HomePage">Go Back</button></div>-->
-<!--                </div>-->
-<!--        </div>-->
-<!--            <div class="col-md-4">-->
-<!--                <div class="p-3 py-5"></div>-->
-<!--            </div>-->
-<!--    </div>-->
-<!--    </div>-->
+                </div>
+            </div>
+    </div>
 
 
 <!--Footer-->

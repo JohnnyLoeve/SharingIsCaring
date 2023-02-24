@@ -34,9 +34,6 @@ public class SecurityConfig {
 //                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 //    }
 
-
-
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
