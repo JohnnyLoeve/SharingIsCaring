@@ -22,7 +22,7 @@ public class UserProfile {
     public UserProfile() {
     }
 
-    public UserProfile(Long id, String name, String username, String password, String role) {
+    public UserProfile(Long id, String name, String username, String password) {
         this.id = id;
         this.name = name;
         this.username = username;

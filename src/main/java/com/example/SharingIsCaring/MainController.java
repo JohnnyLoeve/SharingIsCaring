@@ -22,7 +22,7 @@ public class MainController {
     //GetMapping for HomePage
     @GetMapping("/HomePage")
     public String mainPage(Model model){
-    UserProfile userProfile = new UserProfile(3L, "Dude", "Duden", "123", "ADMIN");
+    UserProfile userProfile = new UserProfile(3L, "Dude", "Duden", "123");
         model.addAttribute("userProfile", userProfile);
         return"HomePage";
     }
@@ -35,12 +35,24 @@ public class MainController {
         return "CreateUser";
     }
 //    PostMapping for CreateUser
-    @PostMapping("/save")
-    public  String CreateUser(@ModelAttribute UserProfile CreateUser){
+    @PostMapping("/CreateUser/saveUser")
+    public  String CreateUser(@ModelAttribute UserProfile userProfile){
         System.out.println("Trying to create user");
-        userRepo.save(CreateUser);
+        userRepo.save(userProfile);
         return "/HomePage";
     }
+
+//    @GetMapping("/CreateAMeal")
+//    public String createAMeal(Model model){
+//        model.addAttribute("CreateAMeal", new Meal());
+//        return "/CreateAMeal";
+//    }
+//    //PostMapping for CreateAMeal (for at gemme måltidet)
+//    @PostMapping("/CreateAMeal/saveMeal")
+//    public String createAMeal(@ModelAttribute Meal meal){
+//        mealRepo.save(meal);
+//        return "/MealOptions";
+//    }
 
     //GetMapping for Login
     @GetMapping("/LoginPage")
@@ -110,12 +122,6 @@ public class MainController {
     return "/MealOptions";
     }
 
-//    @PostMapping("/save")
-//    public  String CreateUser(@ModelAttribute UserProfile CreateUser){
-//        System.out.println("Trying to create user");
-//        userRepo.save(CreateUser);
-//        return "/HomePage";
-//    }
 
 
     //GetMapping for EditMeal
