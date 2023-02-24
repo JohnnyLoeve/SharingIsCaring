@@ -14,17 +14,17 @@ public class Meal {
     private String description;
     @Column(name="price")
     private Double price;
-    @Column(name="img")
-    private String img;
+//    @Column(name="img")
+//    private String img;
 
     public Meal(){
     }
-    public Meal(Long id, String name, String description, Double price, String img) {
+    public Meal(Long id, String name, String description, Double price) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.img = img;
+//        this.img = img;
     }
 
     public Long getId() {
@@ -59,11 +59,11 @@ public class Meal {
         this.price = price;
     }
 
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
+//    public String getImg() {
+//        return img;
+//    }
+//
+//    public void setImg(String img) {
+//        this.img = img;
+//    }
 }

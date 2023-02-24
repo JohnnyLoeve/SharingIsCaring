@@ -34,24 +34,24 @@
     </div>
 </nav>
 
-<!--    <div class="text-center" th:fragment="content">-->
-<!--        <form action="/CreateAMeal/saveMeal" th:object="${Meal}" method="POST">-->
-<!--            <fieldset >-->
-<!--                <legend class="pt-4">Go ahead! Add a meal:</legend>-->
-<!--                <label class="pt-1">Add a meal</label> <br>-->
-<!--                <input type="text" th:field="*{Meal}" name="meal" class="rounded" placeholder="Add a meal" /> <br>-->
-<!--                <label class="pt-1">Describe it</label> <br>-->
-<!--                <input type="text" th:field="*{description}" name="description" class="rounded" placeholder="Add a description" /> <br>-->
-<!--                <label class="pt-1">What's the price</label> <br>-->
-<!--                <input type="text" th:field="*{price}" name="price" class="rounded" placeholder="Add a price" /> <br>-->
-<!--                <input th:if="${Meal.id != null}" type="hidden" th:field="*{id}"/> &lt;!&ndash;Adds a secret id&ndash;&gt;-->
-<!--                <div class="form-actions">-->
-<!--                    <input type="submit" value="Save meal">-->
-<!--                </div>-->
-<!--            </fieldset>-->
-<!--        </form>-->
-<!--    </div>-->
-<!--    </form>-->
+    <div class="text-center" th:fragment="content">
+        <form action="/CreateAMeal/saveMeal" th:object="${Meal}" method="POST">
+            <fieldset>
+                <legend class="pt-4">Go ahead! Add a meal:</legend>
+                <label class="pt-1">Add a meal</label> <br>
+                <input type="text" field="*{name}" name="name" class="rounded" placeholder="Add a meal" /> <br>
+                <label class="pt-1">Describe it</label> <br>
+                <input type="text" field="*{description}" name="description" class="rounded" placeholder="Add a description" /> <br>
+                <label class="pt-1">What's the price</label> <br>
+                <input type="text" field="*{price}" name="price" class="rounded" placeholder="Add a price" /> <br>
+                <input if="${Meal.id != null}" type="hidden" field="*{id}"/> <!--Adds a secret id-->
+                <div class="form-actions">
+                    <input type="submit" value="Save meal">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    </form>
 
 <!--Footer-->
 <div class="mt-5 p-4 bg-light text-black text-center">

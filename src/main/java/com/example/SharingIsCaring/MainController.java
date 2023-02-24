@@ -104,11 +104,18 @@ public class MainController {
         return "/CreateAMeal";
     }
     //PostMapping for CreateAMeal (for at gemme måltidet)
-    @PostMapping("/CreateAMeal")
+    @PostMapping("/CreateAMeal/saveMeal")
     public String createAMeal(@ModelAttribute Meal meal){
     mealRepo.save(meal);
     return "/MealOptions";
     }
+
+//    @PostMapping("/save")
+//    public  String CreateUser(@ModelAttribute UserProfile CreateUser){
+//        System.out.println("Trying to create user");
+//        userRepo.save(CreateUser);
+//        return "/HomePage";
+//    }
 
 
     //GetMapping for EditMeal
