@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:href="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Account</title>
@@ -89,7 +89,13 @@
             </div>
             <div class="col-md-4">
                 <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center experience"><span>Add Meal:</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;New Meal:</span></div><br>
+
+                    <div class="mt-5 text-center">
+                        <a href="/CreateAMeal">
+                            <button class="btn btn-primary profile-button" type="button">Create A Meal</button>
+                        </a>
+                    </div>
+<!--                    <div class="d-flex justify-content-between align-items-center experience"><span>Add Meal:</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;New Meal:</span></div><br>-->
                 </div>
             </div>
         </div>
