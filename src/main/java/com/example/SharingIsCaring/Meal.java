@@ -1,25 +1,23 @@
 package com.example.SharingIsCaring;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Meal {
     @Id
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id; // id of meal
+    @Column(name="name")
     private String name;
+    @Column(name="description")
     private String description;
+    @Column(name="price")
     private Double price;
+    @Column(name="img")
     private String img;
 
-    //do we need another empty constructor for security ??
-
     public Meal(){
-
     }
     public Meal(Long id, String name, String description, Double price, String img) {
         this.id = id;

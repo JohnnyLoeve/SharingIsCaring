@@ -1,17 +1,18 @@
 package com.example.SharingIsCaring;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class UserProfile {
     @Id
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // id of newUser
+    @Column(name="name")
     private String name;
+    @Column(name="username")
     private String username;
+    @Column(name="password")
     private String password;
 
 

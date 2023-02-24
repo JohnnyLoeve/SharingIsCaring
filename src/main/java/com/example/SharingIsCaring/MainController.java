@@ -76,8 +76,8 @@ public class MainController {
     //GetMapping for MealOptions
     @GetMapping("/MealOptions")
     public String mealOptions (Model model){
-        List<Meal> meals = (List)mealRepo.findAll();
-        model.addAttribute("meals", meals);
+//        List<Meal> meals = (List)mealRepo.findAll();
+//        model.addAttribute("meals", meals);
         return "MealOptions";
     }
 
