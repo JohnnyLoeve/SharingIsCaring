@@ -8,3 +8,10 @@ function pictureFlip(){
               document.getElementById('picturex').src = "https://www.nicepng.com/png/full/772-7729123_join-the-campaign-to-reduce-food-waste-in.png";
               }
 }
+
+ window.addEventListener('load', () => {
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item'
+      });

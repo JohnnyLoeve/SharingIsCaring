@@ -12,6 +12,35 @@
     <p >Log in</p>
 </div>
 
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/HomePage">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/MealOptions">Meal Options</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/CreateAMeal">Add your Meal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Account">Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/LoginPage">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/CreateUser">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/ContactForm">Contact Form</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
 <div class="text-center" th:fragment="content">
     <form  th:object="${userProfile}" th:action="@{/LoginPage}" method="POST">
         <fieldset >
