@@ -3,8 +3,8 @@ CREATE TABLE Meal(
   name VARCHAR(64) NOT NULL,
   description VARCHAR(MAX),
   price BIGINT NOT NULL,
-  img VARCHAR(MAX)
-
+  img VARCHAR(MAX),
+  claimedBy VARCHAR(64)
 );
 
 CREATE TABLE USER_PROFILE(
@@ -18,3 +18,4 @@ phone VARCHAR(64),
 country VARCHAR(64),
 postcode VARCHAR(64)
 );
+

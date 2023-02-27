@@ -17,7 +17,7 @@ public interface UserRepo extends CrudRepository <UserProfile, Long> {
             String password
     );
 
-    @Query(value ="SELECT id, name, username, password, email, address, phone, postcode, country FROM USERPROFILE WHERE id = ?1", nativeQuery = true)
+    @Query(value ="SELECT id, name, username, password, email, address, phone, postcode, country FROM USER_PROFILE WHERE id = ?1", nativeQuery = true)
     Optional <UserProfile> findUserById(
             BigInteger id
 

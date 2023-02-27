@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.BigInteger;
 import java.sql.SQLOutput;
+import java.sql.Statement;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class MainController {
@@ -73,10 +75,15 @@ public class MainController {
 
     //GetMapping for Account
     @GetMapping("/Account")
-    public String account (Model model, @RequestParam BigInteger id){
-    userRepo.findUserById(id);
+    public String account (Model model){
+        Optional<UserProfile> user = userRepo.findById(2L);
+        model.addAttribute("userProfile", user.get());
+            return "Account";
 
-        return "Account";
+//        System.out.println("Trying to return UserProfile");
+//        model.addAttribute("userProfile", userRepo.findUserById(new BigInteger("1")));
+
+
     }
 
     @GetMapping("/MealOptions")

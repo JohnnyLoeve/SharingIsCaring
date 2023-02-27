@@ -81,14 +81,14 @@
                         <h4 class="text-right">Profile Settings</h4>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="enter name" value=""></div>
+                        <div class="col-md-12"><label class="labels" >Name</label><input type="text" class="form-control" th:placeholder="${userProfile.name}" value=""></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Phone:</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
-                        <div class="col-md-12"><label class="labels">Address:</label><input type="text" class="form-control" placeholder="enter address" value=""></div>
-                        <div class="col-md-12"><label class="labels">Postcode:</label><input type="text" class="form-control" placeholder="enter postcode" value=""></div>
-                        <div class="col-md-12"><label class="labels">Country:</label><input type="text" class="form-control" placeholder="enter country" value=""></div>
-                        <div class="col-md-12"><label class="labels">Email:</label><input type="text" class="form-control" placeholder="enter email" value=""></div>
+                        <div class="col-md-12"><label class="labels">Phone:</label><input type="text" class="form-control" th:placeholder="${userProfile.phone}" value=""></div>
+                        <div class="col-md-12"><label class="labels">Address:</label><input type="text" class="form-control" th:placeholder="${userProfile.address}" value=""></div>
+                        <div class="col-md-12"><label class="labels">Postcode:</label><input type="text" class="form-control" th:placeholder="${userProfile.postcode}" value=""></div>
+                        <div class="col-md-12"><label class="labels">Country:</label><input type="text" class="form-control" th:placeholder="${userProfile.country}" value=""></div>
+                        <div class="col-md-12"><label class="labels">Email:</label><input type="text" class="form-control" th:placeholder="${userProfile.email}" value=""></div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
