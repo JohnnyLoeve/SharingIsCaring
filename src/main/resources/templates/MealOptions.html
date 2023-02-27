@@ -55,16 +55,18 @@ width: auto;
 </nav>
 
 
-<!--Category selector-->
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-        <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+<!--Category selector
+make a javascript that toggles between food categories and changes the "active"-class, so the toggled category always is the active category
+-->
+<div class="btn-group btn-group-toggle col-md-12 text-center btn-success mx-3" data-toggle="buttons">
+    <label id="catBtn1" class="btn  active">
+        <input  type="radio" name="options" id="option1" autocomplete="off" checked> Asian dishes
     </label>
-    <label class="btn btn-secondary">
-        <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+    <label class="btn ">
+        <input type="radio" name="options" id="option2" autocomplete="off"> Vegetarian
     </label>
-    <label class="btn btn-secondary">
-        <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+    <label class="btn ">
+        <input type="radio" name="options" id="option3" autocomplete="off"> Classic danish
     </label>
 </div>
 

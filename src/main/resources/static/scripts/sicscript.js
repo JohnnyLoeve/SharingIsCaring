@@ -9,9 +9,13 @@ function pictureFlip(){
               }
 }
 
- window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
+//Javascript til category buttons.
+//function changeActive1(){
+//var element = document.getElementbyId('catBtn1');
+//element.classList.toggle('active')
+//
+//if(element.classList.contains('active')){
+//document.getElementById('catBtn1').
+//
+//}
+//}
