@@ -54,6 +54,8 @@
                 <input type="text" field="*{description}" name="description" class="rounded" placeholder="Add a description" /> <br>
                 <label class="pt-1">What's the price</label> <br>
                 <input type="text" field="*{price}" name="price" class="rounded" placeholder="Add a price" /> <br>
+                <label class="pt-1">Add a picture of your meal</label> <br>
+                <input type="text" field="*{img}" name="img" class="rounded" placeholder="Add a picture" /> <br>
                 <input if="${Meal.id != null}" type="hidden" field="*{id}"/> <!--Adds a secret id-->
                 <div class="form-actions">
                     <input type="submit" value="Save meal">

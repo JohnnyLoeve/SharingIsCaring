@@ -73,9 +73,9 @@ public class MainController {
 
     //GetMapping for Account
     @GetMapping("/Account")
-    public String account (Model model){
-//        List<Meal> meals = (List)mealRepo.findAll();
-//        model.addAttribute("meals", meals);
+    public String account (Model model, @RequestParam BigInteger id){
+    userRepo.findUserById(id);
+
         return "Account";
     }
 
