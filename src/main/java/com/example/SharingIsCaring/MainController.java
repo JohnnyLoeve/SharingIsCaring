@@ -80,10 +80,6 @@ public class MainController {
         model.addAttribute("userProfile", user.get());
             return "Account";
 
-//        System.out.println("Trying to return UserProfile");
-//        model.addAttribute("userProfile", userRepo.findUserById(new BigInteger("1")));
-
-
     }
 
     @GetMapping("/MealOptions")
