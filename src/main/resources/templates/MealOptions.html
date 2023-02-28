@@ -75,11 +75,11 @@ width: auto;
 make a javascript that toggles between food categories and changes the "active"-class, so the toggled category always is the active category
 -->
 <div class="btn-group btn-group-toggle col-md-12 text-center btn-success mx-3" data-toggle="buttons">
-    <label id="catBtn1" class="btn  active">
+    <label  class="btn  active">
         <input  type="radio" name="options" id="option1" autocomplete="off" checked> Asian
     </label>
     <label class="btn ">
-        <input type="radio" name="options" id="option2" autocomplete="off"> Vegetarian
+        <input onclick="showVegetarian()" type="radio" name="options" id="option2" autocomplete="off"> Vegetarian
     </label>
     <label class="btn ">
         <input type="radio" name="options" id="option3" autocomplete="off"> Vegan
@@ -100,43 +100,43 @@ make a javascript that toggles between food categories and changes the "active"-
 
 <!-- printing out meals-->
 <section class="p-5">
-<div class="row p-5">
+    <div class="row p-5">
+        <tr th:each="meals : ${meal}">
 
-    <tr th:each="meals : ${meal}">
+            <script>
+		    function generateId() {
+			    var element = document.getElementById('myDiv');
+			    var id = Date.now(); // Generates a unique ID based on the current time
+			    element.setAttribute('id', id);
+		        }
+	        </script>
 
-        <script>
-		function generateId() {
-			var element = document.getElementById('myDiv');
-			var id = Date.now(); // Generates a unique ID based on the current time
-			element.setAttribute('id', id);
-		}
-	</script>
+        <div class="col-md-4">
+            <div th:class="${meals.tag}">
+                <div  class=" p-3 meal ">
+                    <h5 th:text="${meals.name}" class="text-center"></h5>
+                    <br>
 
-        <div class="col-md-4 ">
-            <div class=" p-3">
-            <h5 th:text="${meals.name}" class="text-center"></h5>
-            <br>
-            <img class="col-12 rounded img-fluid zoom" th:src="${meals.img}"/>
-            <br>
-        <div class="p-3 pt-1 text-center">
-            <th th:text="${meals.description}" ></th>
-            <br>
-            <th th:text="${meals.price}"></th>
-            <br>
-            <a>
-            <button class="btn  btn-success mt-2" onclick="showContactInfo()">Buy meal</button>
-            </a>
-            <div id="myDiv" class="d-none">
-                Contact info: <br>
-                <th th:text="${meals.contact}"></th>
+                    <img class="col-12 rounded img-fluid zoom" th:src="${meals.img}"/>
+                    <br>
+                        <div class="p-3 pt-1 text-center">
+                        <th th:text="${meals.description}" ></th>
+                        <br>
+                        <th th:text="${meals.price}"></th>
+                        <br>
+                        <a>
+                        <button  class="btn  btn-success mt-2" onclick="showContactInfo()">Buy meal</button>
+                        </a>
+                            <div id="myDiv" class="d-none">
+                            Contact info: <br>
+                            <th th:text="${meals.contact}"></th>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-            </div>
-        </div>
-    </tr>
-</div>
-
-
+        </tr>
+    </div>
 </section>
 
 

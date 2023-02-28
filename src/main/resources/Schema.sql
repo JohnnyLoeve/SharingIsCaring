@@ -4,7 +4,8 @@ CREATE TABLE Meal(
   description VARCHAR(MAX),
   price BIGINT NOT NULL,
   img VARCHAR(MAX),
-  contact VARCHAR(MAX)
+  contact VARCHAR(MAX),
+  tag VARCHAR(MAX)
 );
 
 CREATE TABLE USER_PROFILE(

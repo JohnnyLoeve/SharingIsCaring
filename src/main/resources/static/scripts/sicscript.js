@@ -34,6 +34,21 @@ var element = document.getElementById('myDiv')
 element.classList.remove('d-none')
 }
 
+//Function to show the selected type of foodchoice
+function showVegetarian() {
+  var elements = document.getElementsByClassName('meal');
+  for (var i = 0; i < elements.length; i++) {
+    var element = elements[i];
+    if (!element.classList.contains('vegetarian')) {
+      element.classList.add('d-none');
+    }
+  }
+}
+
+
+
+
+
 //function pictureFlip(){
 //    var element = document.getElementById('picture');
 //    element.classList.toggle("active");

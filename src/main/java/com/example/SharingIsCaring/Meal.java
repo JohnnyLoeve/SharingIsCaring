@@ -16,21 +16,21 @@ public class Meal {
     private Double price;
     @Column(name="img")
     private String img;
-
-
-
     @Column(name="contact")
     private String contact;
+    @Column(name="tag")
+    private String tag;
 
     public Meal(){
     }
-    public Meal(Long id, String name, String description, Double price, String contact) {
+    public Meal(Long id, String name, String description, Double price, String contact, String tag) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.contact = contact;
         this.img = img;
+        this.tag = tag;
     }
 
     public Long getId() {
@@ -79,5 +79,12 @@ public class Meal {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }
