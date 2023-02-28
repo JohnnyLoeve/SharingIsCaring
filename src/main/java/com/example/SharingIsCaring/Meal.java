@@ -17,13 +17,19 @@ public class Meal {
     @Column(name="img")
     private String img;
 
+
+
+    @Column(name="contact")
+    private String contact;
+
     public Meal(){
     }
-    public Meal(Long id, String name, String description, Double price) {
+    public Meal(Long id, String name, String description, Double price, String contact) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.contact = contact;
         this.img = img;
     }
 
@@ -65,5 +71,13 @@ public class Meal {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }
