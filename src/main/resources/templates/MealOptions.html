@@ -69,33 +69,36 @@ width: auto;
         </ul>
     </div>
 </nav>
-
-
+<script>
+    function filterMeals(category) {
+    window.location.href = "/MealOptions?cat=" + category;
+}
+</script>
 <div class="btn-group btn-group-toggle col-md-12 text-center btn-success mx-3" data-toggle="buttons">
 
-    <label  class="btn  active">
-        <input  type="radio" name="options" id="option0" autocomplete="off" checked> All
+    <label class="btn active">
+        <input type="radio" name="options" id="option0" autocomplete="off"  value="All" onclick="filterMeals('All')"> All
     </label>
-    <label href="/MealOptions/?cat=Asian" class="btn">
-        <input href="/MealOptions/?cat=Asian" value="Asian" type="radio" name="options" id="option1" autocomplete="off" checked> Asian
+    <label class="btn">
+        <input type="radio" name="options" id="option1" autocomplete="off" value="Asian" onclick="filterMeals('Asian')"> Asian
     </label>
-    <label class="btn ">
-        <input type="radio" name="options" id="option2" autocomplete="off"> Vegetarian
+    <label class="btn">
+        <input type="radio" name="options" id="option2" autocomplete="off" value="Vegetarian" onclick="filterMeals('Vegetarian')"> Vegetarian
     </label>
-    <label class="btn ">
-        <input type="radio" name="options" id="option3" autocomplete="off"> Vegan
+    <label class="btn">
+        <input type="radio" name="options" id="option3" autocomplete="off" value="Vegan" onclick="filterMeals('Vegan')"> Vegan
     </label>
-    <label class="btn ">
-        <input type="radio" name="options" id="option4" autocomplete="off"> American
+    <label class="btn">
+        <input type="radio" name="options" id="option4" autocomplete="off" value="American" onclick="filterMeals('American')"> American
     </label>
-    <label class="btn ">
-        <input type="radio" name="options" id="option5" autocomplete="off"> Classic danish
+    <label class="btn">
+        <input type="radio" name="options" id="option5" autocomplete="off" value="Classic danish" onclick="filterMeals('Classic danish')"> Classic danish
     </label>
-    <label class="btn ">
-        <input type="radio" name="options" id="option6" autocomplete="off"> Italian
+    <label class="btn">
+        <input type="radio" name="options" id="option6" autocomplete="off" value="Italian" onclick="filterMeals('Italian')"> Italian
     </label>
-    <label class="btn ">
-        <input type="radio" name="options" id="option7" autocomplete="off"> Tapas
+    <label class="btn">
+        <input type="radio" name="options" id="option7" autocomplete="off" value="Tapas" onclick="filterMeals('Tapas')"> Tapas
     </label>
 
 </div>
@@ -117,7 +120,7 @@ width: auto;
                         <br>
                         <th th:text="${meals.price}"></th>
                         <br>
-                        <a href="/HomePage">
+                        <a th:href="'/MealDetails/' + ${meals.getId}">
                         <button  class="btn  btn-success mt-2" onclick="showContactInfo()">Buy meal</button>
                         </a>
                         </div>

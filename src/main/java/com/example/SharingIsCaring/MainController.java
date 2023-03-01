@@ -11,6 +11,7 @@ import java.sql.SQLOutput;
 import java.sql.Statement;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 @Controller
 public class MainController {
@@ -88,9 +89,14 @@ public class MainController {
 //    }
     @GetMapping("/MealOptions")
     public String mealOptions (Model model, @RequestParam(defaultValue = "All") String cat){
+        if(cat.equals("All") ){
+            List<Meal> meal = (List)mealRepo.findAll();
+            model.addAttribute("meal", meal);
+        } else {
+            List<Meal> meal = mealRepo.sort(cat);
+            model.addAttribute("meal", meal);
+        }
 
-        List<Meal> meal = mealRepo.sort(cat);
-        model.addAttribute("meal", meal);
         System.out.println("Trying to return meals");
         return "MealOptions";
     }
@@ -122,6 +128,25 @@ public class MainController {
     mealRepo.save(meal);
     return "/MealOptions";
     }
+
+    @GetMapping("/MealDetails/{id}")
+    public String mealDetails(Model model, @PathVariable Long id){
+        Optional<Meal> meal = mealRepo.findById(id);
+        model.addAttribute("meal", meal.get());
+        System.out.println(mealRepo.findById(id).toString());
+        return"MealDetails";
+    }
+
+
+//    @GetMapping("/book/{id}")
+//    public String details(Model model, @PathVariable int id){
+//
+//        model.addAttribute("book", books.getBook(id));
+//
+//        return "bookDetails";
+//    }
+
+
 
 
     //GetMapping for EditMeal
