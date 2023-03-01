@@ -1,6 +1,8 @@
 package com.example.SharingIsCaring;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.ui.Model;
 
@@ -26,17 +28,41 @@ class SharingIsCaringApplicationTests {
 	}
 
 	@Test
-	public void register() {
-		String Password;
-		Password = "123";
-		assertEquals("123", Password);
+	public void testCreateUser() {
+		MainController controller = new MainController();
+		Model model = mock(Model.class);
+
+		String viewName = controller.CreateUser(model);
+
+		assertEquals("CreateUser", viewName);
 	}
 
+	@Mock
+	private MealRepo mealRepository;
+	@InjectMocks
+	private MainController mealController;
 	@Test
-	public void loginPage() {
-		String username;
-		username = "Sion";
-		assertEquals("Sion", username);
+	public void testCreateAMeal() {
+		Meal meal = new Meal();
+		String result = mealController.createAMeal(meal);
+
+		verify(mealRepository).save(meal);
+
+		assertEquals("/MealOptions", result);
 	}
+
+//	@Test
+//	public void register() {
+//		String Password;
+//		Password = "123";
+//		assertEquals("123", Password);
+//	}
+//
+//	@Test
+//	public void loginPage() {
+//		String username;
+//		username = "Sion";
+//		assertEquals("Sion", username);
+//	}
 
 }
