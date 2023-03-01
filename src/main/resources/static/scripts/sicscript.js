@@ -1,49 +1,49 @@
-
-// Functions to change login status and what is shown in the navBar
-var status;
-
-statusCheck()
-showAll()
-
-
-function statusCheck(){
-status = localStorage.getItem('status')
-if(!status){
-status = 'loggedOut'
-localStorage.setItem('status', status)}
-}
-
-function changeStatusLoggedIn(){
-status = localStorage.getItem('status')
-status = 'loggedIn'
-localStorage.setItem('status', status)
-}
-
-function showAll(){
-var elements = document.getElementsByClassName('nav-link')
- if(status === 'loggedIn'){
- for (var element of elements) {
-    element.classList.remove('d-none');
-}
-}
-}
-
-//Functions to show the contact info, when pushing "buy meal"
-function showContactInfo(){
-var element = document.getElementById('uid()')
-element.classList.remove('d-none')
-}
-
-//Function to show the selected type of foodchoice
-function showVegetarian() {
-  var elements = document.getElementsByClassName('meal');
-  for (var i = 0; i < elements.length; i++) {
-    var element = elements[i];
-    if (!element.classList.contains('vegetarian')) {
-      element.classList.add('d-none');
-    }
-  }
-}
+//
+//// Functions to change login status and what is shown in the navBar
+//var status;
+//
+//statusCheck()
+//showAll()
+//
+//
+//function statusCheck(){
+//status = localStorage.getItem('status')
+//if(!status){
+//status = 'loggedOut'
+//localStorage.setItem('status', status)}
+//}
+//
+//function changeStatusLoggedIn(){
+//status = localStorage.getItem('status')
+//status = 'loggedIn'
+//localStorage.setItem('status', status)
+//}
+//
+//function showAll(){
+//var elements = document.getElementsByClassName('nav-link')
+// if(status === 'loggedIn'){
+// for (var element of elements) {
+//    element.classList.remove('d-none');
+//}
+//}
+//}
+//
+////Functions to show the contact info, when pushing "buy meal"
+//function showContactInfo(){
+//var element = document.getElementById('uid()')
+//element.classList.remove('d-none')
+//}
+//
+////Function to show the selected type of foodchoice
+//function showVegetarian() {
+//  var elements = document.getElementsByClassName('meal');
+//  for (var i = 0; i < elements.length; i++) {
+//    var element = elements[i];
+//    if (!element.classList.contains('vegetarian')) {
+//      element.classList.add('d-none');
+//    }
+//  }
+//}
 
 
 

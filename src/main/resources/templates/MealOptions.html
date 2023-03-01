@@ -52,10 +52,10 @@ width: auto;
                 <a class="nav-link" href="/MealOptions">Meal Options</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link change" href="/CreateAMeal">Add your Meal</a>
+                <a class="nav-link" href="/CreateAMeal">Add your Meal</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link change" href="/Account">Account</a>
+                <a class="nav-link" href="/Account">Account</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/LoginPage">Login</a>
@@ -79,7 +79,7 @@ make a javascript that toggles between food categories and changes the "active"-
         <input  type="radio" name="options" id="option1" autocomplete="off" checked> Asian
     </label>
     <label class="btn ">
-        <input onclick="showVegetarian()" type="radio" name="options" id="option2" autocomplete="off"> Vegetarian
+        <input type="radio" name="options" id="option2" autocomplete="off"> Vegetarian
     </label>
     <label class="btn ">
         <input type="radio" name="options" id="option3" autocomplete="off"> Vegan
@@ -98,17 +98,14 @@ make a javascript that toggles between food categories and changes the "active"-
     </label>
 </div>
 
-            <script>
-		    const uid = (() => (id = 0, () => id++))();
-	        </script>
+<!--            <script>-->
+<!--		    const uid = (() => (id = 0, () => id++))();-->
+<!--	        </script>-->
 
 <!-- printing out meals-->
 <section class="p-5">
     <div class="row p-5">
         <tr th:each="meals : ${meal}">
-
-
-
         <div class="col-md-4">
             <div th:class="${meals.tag}">
                 <div  class=" p-3 meal ">
@@ -122,13 +119,13 @@ make a javascript that toggles between food categories and changes the "active"-
                         <br>
                         <th th:text="${meals.price}"></th>
                         <br>
-                        <a>
+                        <a href="/HomePage">
                         <button  class="btn  btn-success mt-2" onclick="showContactInfo()">Buy meal</button>
                         </a>
-                            <div id="uid()" class="d-none">
-                            Contact info: <br>
-                            <th th:text="${meals.contact}"></th>
-                            </div>
+<!--                            <div id="uid()" class="d-none">-->
+<!--                            Contact info: <br>-->
+<!--                            <th th:text="${meals.contact}"></th>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>
