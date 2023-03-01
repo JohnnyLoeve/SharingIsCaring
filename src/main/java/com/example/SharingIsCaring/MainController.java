@@ -138,17 +138,6 @@ public class MainController {
     }
 
 
-//    @GetMapping("/book/{id}")
-//    public String details(Model model, @PathVariable int id){
-//
-//        model.addAttribute("book", books.getBook(id));
-//
-//        return "bookDetails";
-//    }
-
-
-
-
     //GetMapping for EditMeal
 
     //PostMapping for EditMeal (Eller bare gøre brug af postmapping fra create a meal)
