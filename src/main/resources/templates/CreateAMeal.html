@@ -71,17 +71,21 @@
                                 <fieldset>
                                     <div class="row mt-2">
                                             <label class="labels">Add a meal</label><br>
-                                        <div class="col-md-10"><input type="text" field="*{name}" name="name" class="form-control" placeholder="Add a meal" value="" /> <br></div>
+                                        <div class="col-md-12"><input type="text" field="*{name}" name="name" class="form-control" placeholder="Add a meal" value="" /> <br></div>
                                             <label class="pt-1">Describe it</label> <br>
-                                        <div class="col-md-10"><input type="text" field="*{description}" name="description" class="form-control" placeholder="Add a description" value="" /> <br></div>
+                                        <div class="col-md-12"><input type="text" field="*{description}" name="description" class="form-control" placeholder="Add a description" value="" /> <br></div>
                                             <label class="pt-1">What's the price</label> <br>
-                                        <div class="col-md-10"><input type="text" field="*{price}" name="price" class="form-control" placeholder="Add a price" value=""/> <br></div>
+                                        <div class="col-md-12"><input type="text" field="*{price}" name="price" class="form-control" placeholder="Add a price" value=""/> <br></div>
                                             <label class="pt-1">Add a picture of your meal</label> <br>
-                                        <div class="col-md-10"><input type="text" field="*{img}" name="img" class="form-control" placeholder="Add a picture" value=""/> <br></div>
-                                            <input if="${Meal.id != null}" type="hidden" field="*{id}"/> <!--Adds a secret id-->
+                                        <div class="col-md-12"><input type="text" field="*{img}" name="img" class="form-control" placeholder="Add a picture" value=""/> <br></div>
+                                            <label class="pt-1">How would you like to be contacted? </label> <br>
+                                        <div class="col-md-12"><input type="text" field="*{contact}" name="contact" class="form-control" placeholder="Add contact info" value=""/> <br></div>
+                                        <label class="pt-1">Add a meal type </label> <br>
+                                        <div class="col-md-12"><input type="text" field="*{tag}" name="tag" class="form-control" placeholder="ex: vegetarian" value=""/> <br></div>
+                                        <input if="${Meal.id != null}" type="hidden" field="*{id}"/> <!--Adds a secret id-->
 
                                         <div class="row mt-3"></div>
-                                        <div class="mt-10 text-center"><button class="btn btn-primary profile-button" type="button" value="Login">Save meal!</button></div>
+                                        <div class="mt-10 text-center"><button type="submit" class="btn btn-primary profile-button" value="">Save meal!</button></div>
                                     </div>
                                 </fieldset>
                             </form>
