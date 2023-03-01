@@ -30,7 +30,7 @@ var elements = document.getElementsByClassName('nav-link')
 
 //Functions to show the contact info, when pushing "buy meal"
 function showContactInfo(){
-var element = document.getElementById('myDiv')
+var element = document.getElementById('uid()')
 element.classList.remove('d-none')
 }
 
