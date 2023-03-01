@@ -81,10 +81,15 @@ public class MainController {
             return "Account";
 
     }
-
+//    @PostMapping("/LoginPage")
+//    public String login(Model model, @ModelAttribute UserProfile userProfile){
+//        userRepo.login(userProfile.getUsername(), userProfile.getPassword());
+//        return "/HomePage";
+//    }
     @GetMapping("/MealOptions")
-    public String mealOptions (Model model){
-        List<Meal> meal = (List)mealRepo.findAll();
+    public String mealOptions (Model model, @RequestParam(defaultValue = "All") String cat){
+
+        List<Meal> meal = mealRepo.sort(cat);
         model.addAttribute("meal", meal);
         System.out.println("Trying to return meals");
         return "MealOptions";

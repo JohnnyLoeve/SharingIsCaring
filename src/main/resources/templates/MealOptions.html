@@ -71,12 +71,13 @@ width: auto;
 </nav>
 
 
-<!--Category selector
-make a javascript that toggles between food categories and changes the "active"-class, so the toggled category always is the active category
--->
 <div class="btn-group btn-group-toggle col-md-12 text-center btn-success mx-3" data-toggle="buttons">
+
     <label  class="btn  active">
-        <input  type="radio" name="options" id="option1" autocomplete="off" checked> Asian
+        <input  type="radio" name="options" id="option0" autocomplete="off" checked> All
+    </label>
+    <label href="/MealOptions/?cat=Asian" class="btn">
+        <input href="/MealOptions/?cat=Asian" value="Asian" type="radio" name="options" id="option1" autocomplete="off" checked> Asian
     </label>
     <label class="btn ">
         <input type="radio" name="options" id="option2" autocomplete="off"> Vegetarian
@@ -96,11 +97,8 @@ make a javascript that toggles between food categories and changes the "active"-
     <label class="btn ">
         <input type="radio" name="options" id="option7" autocomplete="off"> Tapas
     </label>
-</div>
 
-<!--            <script>-->
-<!--		    const uid = (() => (id = 0, () => id++))();-->
-<!--	        </script>-->
+</div>
 
 <!-- printing out meals-->
 <section class="p-5">
@@ -122,10 +120,6 @@ make a javascript that toggles between food categories and changes the "active"-
                         <a href="/HomePage">
                         <button  class="btn  btn-success mt-2" onclick="showContactInfo()">Buy meal</button>
                         </a>
-<!--                            <div id="uid()" class="d-none">-->
-<!--                            Contact info: <br>-->
-<!--                            <th th:text="${meals.contact}"></th>-->
-<!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -135,60 +129,21 @@ make a javascript that toggles between food categories and changes the "active"-
 </section>
 
 
-
-
-
-<!-- Meal table options -->
-<!--<table>-->
-
-<!--    <tr th:each="meal : ${MealOptions}"> &lt;!&ndash; For each loop creates a new meal by iterating through meals &ndash;&gt;-->
-<!--        <th><a th:href="'/MealOptions/meal/' + ${currentPage} + '/' + ${meal.id}" th:text="${meal.name}"></a></th>-->
-<!--        <th th:text="${meal.price} + '0 DKK'"></th>-->
-<!--        <th><a th:href="'/MealOptions/editMeal/' + ${meal.getId}">Edit Meal</a></th>-->
-<!--        <th><a th:href="'/MealOptions/deleteMeal/' + ${meal.getId}">Delete Meal</a></a></th>-->
-
-<!--    </tr>-->
-<!--</table>-->
-
-<!-- Page turn -->
-<!--<div>-->
-<!--    <span th:if="${showPrev}">-->
-<!--        <a th:href="'/MealOptions/mealList?page=' + ${currentPage-1}" th:text="Previous"></a>-->
-<!--    </span>-->
-<!--    <span th:each="page : ${pages}">-->
-<!--        <span th:if="${currentPage == page}" th:text="${page}"></span>-->
-<!--        <a th:if="${currentPage != page}" th:href="'/MealOptions/mealList?page=' + ${page}" th:text="${page}"></a>-->
-<!--    </span>-->
-<!--    <span th:if="${showNext}">-->
-<!--        <a th:href="'/MealOptions/mealList?page=' + ${currentPage+1}" th:text="Next"></a>-->
-<!--    </span>-->
-<!--</div>-->
-
-<!-- Logged in as + Logout-->
-<!--<div>-->
-<!--    <p th:text="${'Logged in as: ' + #httpServletRequest.remoteUser}"></p>-->
-<!--    <form th:action="@{/Logout}" method="post">-->
-<!--        <input type="submit" value="Logout"/>-->
-<!--    </form>-->
-<!--</div>-->
-
 <!--Footer-->
 <div class="mt-5 p-4 bg-light text-black text-center">
-    <div class="col-md-3 text-center">
-        <ul class="list-unstyled mb-0">
-            <li><i class="fas fa-map-marker-alt fa-2x"></i>Address:
+    <div class="col-md-4 text-center">
+            <i class="fas fa-map-marker-alt fa-2x"></i>Address:
                 <p>Nygaardsvej 60,2tv, Copenhagen, DK</p>
-            </li>
-
-            <li><i class="fas fa-phone mt-4 fa-2x"></i>Phone:
-                <p>+45 01234567</p>
-            </li>
-
-            <li><i class="fas fa-envelope mt-4 fa-2x"></i>E-mail:
-                <p>contact@sharingiscaring.com</p>
-            </li>
-        </ul>
     </div>
+    <div class="col-md-4 text-center">
+        <i class="fas fa-phone mt-4 fa-2x"></i>Phone:
+            <p>+45 01234567</p>
+        </div>
+
+    <div class="col-md-4 text-center">
+        <i class="fas fa-envelope mt-4 fa-2x"></i>E-mail:
+            <p>contact@sharingiscaring.com</p>
+        </div>
 </div>
 <script src="scripts\sicscript.js"></script>
 </body>
