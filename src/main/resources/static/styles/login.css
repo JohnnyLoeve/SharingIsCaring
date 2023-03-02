@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
 
 *{
@@ -21,7 +22,7 @@
     box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
 }
 .side-image{
-    background-image: url("static/media/Healthy-Eating.png");
+    background-image: url("/Users/lisawatts/Desktop/Java files/SharingIsCaring/src/main/resources/static/media/Healthy-Eating.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

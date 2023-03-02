@@ -39,7 +39,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests()
                 //Permits resources
-                .requestMatchers("/static/scripts/sicscript.js", "/media/**", "/scripts/**", "/styles/**", "/resources/**", "static/styles/style.css").permitAll()
+                .requestMatchers("/static/scripts/sicscript.js", "/media/**", "/scripts/**", "/styles/**", "/resources/**", "static/styles/style.css", "static/styles/login.css").permitAll()
                 //permits sites for visitors without login
                 .requestMatchers("/ContactForm","/HomePage", "/LoginPage", "/CreateUser", "/MealOptions", "/MealDetails/**").permitAll()
                 //permits the h2 database

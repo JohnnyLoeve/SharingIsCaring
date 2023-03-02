@@ -17,8 +17,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resources/static/styles/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body>
 <!-- Background image -->
@@ -68,12 +71,14 @@
         </ul>
     </div>
 </nav>
+
 <body>
+
+<!-- new login
 <div class="wrapper">
     <div class="container main">
         <div class="row">
             <div class="col-md-6 side-image">
-                <!-------Image-------->
                 <img src="/Users/lisawatts/Desktop/Java files/SharingIsCaring/src/main/resources/static/media/Healthy-Eating.png" alt="">
                 <div class="text">
                     <p>Join the community of developers <i>- ludiflex</i></p>
@@ -103,26 +108,35 @@
     </div>
 </div>
 </body>
-
-<!-- new login-->
+-->
 
 
 <!-- old login-->
-
-<div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
+    <div class="container"><!--new-->
+    <div class="box"><!--new-->
+    <!--<div class="row">-->
         <div class="col-md-3 border-right"></div>
         <div class="col-md-3 border-right">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="text-center" th:fragment="content">
                         <form  th:object="${userProfile}" th:action="@{/LoginPage}" method="POST">
-                        <h4 class="text-right">Log in</h4>
+
+                            <div class="top">
+                                <span>Have an account?</span> <!--new-->
+                                <h4 class="text-right">Log in</h4>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" class="input" placeholder="Username" id="">
+                                <i class='bx bx-user' ></i>
+                            </div>
 
                         <fieldset>
                             <div class="row mt-2">
                                 <label class="labels">Username:</label><br>
-                                <div class="col-md-10"><input type="text" field="*{username}" name="username" class="form-control" placeholder="Enter username" value=""/> </br></div>
+                                <div class="col-md-10"><input type="text" field="*{username}" name="username" class="form-control" placeholder="Enter username" value="" id=""/> </br></div>
+                                <i class='bx bx-user' ></i>
                                 <label class="labels">Password:</label>
                                 <div class="col-md-10"><input type="password" field="*{password}" name="password" class="form-control" placeholder="Enter password" value=""/> <br></div>
                                 <label class="mt-1 text-center"><button class="btn btn-primary profile-button"  onclick="changeStatusLoggedIn()" type="submit" value="Login">Log in</button></label>
@@ -159,5 +173,40 @@
 </div>
 
 <script src="scripts\sicscript.js"></script>
+
+
+
+
+<body>
+<div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Phone</h3>
+                    <ul>
+                        <li><a href="#">+(45) 01234567</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Email</h3>
+                    <ul>
+                        <li><a href="#">contact@sharingiscaring.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Company Address:</h3>
+                    <p>Nygaardsvej 6xx,2tv, Copenhagen, Denmark. Please do not hesitate to contact us. </p>
+                </div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+            </div>
+            <p class="copyright">SharingIsCaring © 2023</p>
+        </div>
+    </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </body>
 </html>
