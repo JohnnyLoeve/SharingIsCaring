@@ -148,22 +148,29 @@
             </div>
             <div class="col-md-6 right">
                 <div class="input-box">
-                    <header>Create account</header>
+                    <header>Login</header>
+                    <form  th:object="${userProfile}" th:action="@{/LoginPage}" method="POST">
                     <div class="input-field">
-                        <input type="text" class="input" id="email" required autocomplete="off">
-                        <label for="email">Email</label>
+                        <label >Username</label>
+                        <br>
+                        <br>
+                        <input id="username" type="text" field="*{username}" name="username" class="form-control" placeholder="Enter username" value="">
                     </div>
                     <div class="input-field">
-                        <input type="password" class="input" id="password" required>
-                        <label for="password">Password</label>
+                        <label>Password</label>
+                        <br>
+                        <br>
+                        <input type="password" field="*{password}" name="password" class="form-control" placeholder="Enter password" value="">
                     </div>
                     <div class="input-field">
-                        <input type="submit" class="submit" value="Sign Up">
-
+                        <input type="submit" class="submit" value="Login">
                     </div>
+                        <br>
+                        <br>
                     <div class="signin">
-                        <span>Already have an account? <a href="#">Log in here</a></span>
+                        <span>Don't have an account? <a href="/CreateUser">Click here!</a></span>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
