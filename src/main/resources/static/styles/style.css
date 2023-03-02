@@ -1,260 +1,151 @@
-/* pink login */
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Poppins', sans-serif;
-}
-.container{
-width: 100%;
-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.guide-btn{
-padding: 10px 60px;
-background: #fff;
-border: 0;
-outline: none;
-cursor: pointer;
-font-size: 22px;
-font-weight: 500;
-border-radius: 30px;
-}
-.popup{
-width: 400px;
-background: #fff;
-border-radius: 6px;
-position: absolute;
-top: 0%;
-left: 50%;
-transform: translate(-50%, -50%) scale(0.1);
-text-align: center;
-padding: 0 30px 30px;
-color: #333;
-visibility: hidden;
-transition: transform 0.4s, top 0.4s;
-}
-.open-popup{
-visibility: visible;
-top: 50%;
-transform: translate(-50%, -50%) scale(1);
-}
-.popup img{
-width: 100px;
-margin-top: -50px;
-border-radius: 50%;
-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-.popup h2{
-font-size: 38px;
-font-weight: 500;
-margin: 30px 0 10px;
-}
-.popup button{
-width: 100%
-margin-top: 50px;
-padding: 10px 0;
-background: #6fd649;
-color: #fff;
-border: 0;
-outline: none;
-font-size: 18px;
-border-radius: 4px;
-cursor: pointer;
-box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-}
-
-
-
-/* transparent login*/
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
-*{
-    font-family: 'poppins' ,sans-serif;
-}
-body{
-    background-image: url("media/1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
 
+*{
+    font-family: 'Poppins', sans-serif;
 }
-.box{
+.wrapper{
+    background: #ececec;
+    padding: 0 20px 0 20px;
+}
+.main{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
+    min-height: 100vh;
 }
-.container{
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 15px 0 15px;
+.row{
+    width: 900px;
+    height: 550px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+}
+.side-image{
+    background-image: url("images/2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 10px 0 0 10px;
+}
+img{
+    width: 450px;
 
+    position: absolute;
+    top: 30px;
+    left: 30px;
 }
-span{
-    color: #fff;
-    font-size: small;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0 10px 0;
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-header{
+.text p{
     color: #fff;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0 10px 0;
-}
-
-.input-field .input{
-    height: 45px;
-    width: 87%;
-    border: none;
-    border-radius: 30px;
-    color: #fff;
-    font-size: 15px;
-    padding: 0 0 0 45px;
-    background: rgba(255,255,255,0.1);
-    outline: none;
+    font-size: 18px;
 }
 i{
-    position: relative;
-    top: -33px;
-    left: 17px;
-    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
 }
-::-webkit-input-placeholder{
-    color: #fff;
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.input-box{
+    width: 330px;
+    box-sizing: border-box;
+}
+.input-box header{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 45px;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 10px 0 10px;
+}
+.input{
+    height: 45px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    outline: none;
+    margin-bottom: 20px;
+    color: #40414a;
+}
+.input-box .input-field label{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-field .input:focus ~ label{
+    top: -10px;
+    font-size: 13px;
+}
+.input-field .input:valid ~ label{
+    top: -10px;
+    font-size: 13px;
+    color: #5d5076;
+}
+.input-field .input:focus, .input-field .input:valid{
+    border-bottom: 1px solid #743ae1;
 }
 .submit{
     border: none;
-    border-radius: 30px;
-    font-size: 15px;
-    height: 45px;
     outline: none;
-    width: 100%;
-    color: black;
-    background: rgba(255,255,255,0.7);
-    cursor: pointer;
-    transition: .3s ;
+    height: 45px;
+    background: #ececec;
+    border-radius: 5px;
+    transition: .4s;
 }
 .submit:hover{
-    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
-}
-.two-col{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    background: rgba(37, 95, 156,0.9);
     color: #fff;
+}
+.signin{
+    text-align: center;
     font-size: small;
-    margin-top: 10px;
+    margin-top: 25px;
 }
-.one{
-    display: flex;
-}
-label a{
+span a{
     text-decoration: none;
-    color: #fff;
+    font-weight: 700;
+    color: #000;
+    transition: .5s;
 }
-
-
-
-
-
-
-/* footer */
-.footer-dark {
-  padding:50px 0;
-  color:#f0f9ff;
-  background-color:#282d32;
+span a:hover{
+    text-decoration: underline;
+    color: #000;
 }
-
-.footer-dark h3 {
-  margin-top:0;
-  margin-bottom:12px;
-  font-weight:bold;
-  font-size:16px;
+@media only screen and (max-width: 768px){
+    .side-image{
+        border-radius: 10px 10px 0 0;
+    }
+    img{
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 47%;
+    }
+    .text{
+        position: absolute;
+        top: 70%;
+        text-align: center;
+    }
+    .text p,i{
+        font-size: 17px;
+    }
+    .row{
+        max-width: 420px;
+        width: 100%;
+    }
 }
-
-.footer-dark ul {
-  padding:0;
-  list-style:none;
-  line-height:1.6;
-  font-size:14px;
-  margin-bottom:0;
-}
-
-.footer-dark ul a {
-  color:inherit;
-  text-decoration:none;
-  opacity:0.6;
-}
-
-.footer-dark ul a:hover {
-  opacity:0.8;
-}
-
-@media (max-width:767px) {
-  .footer-dark .item:not(.social) {
-    text-align:center;
-    padding-bottom:20px;
-  }
-}
-
-.footer-dark .item.text {
-  margin-bottom:36px;
-}
-
-@media (max-width:767px) {
-  .footer-dark .item.text {
-    margin-bottom:0;
-  }
-}
-
-.footer-dark .item.text p {
-  opacity:0.6;
-  margin-bottom:0;
-}
-
-.footer-dark .item.social {
-  text-align:center;
-}
-
-@media (max-width:991px) {
-  .footer-dark .item.social {
-    text-align:center;
-    margin-top:20px;
-  }
-}
-
-.footer-dark .item.social > a {
-  font-size:20px;
-  width:36px;
-  height:36px;
-  line-height:36px;
-  display:inline-block;
-  text-align:center;
-  border-radius:50%;
-  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
-  margin:0 8px;
-  color:#fff;
-  opacity:0.75;
-}
-
-.footer-dark .item.social > a:hover {
-  opacity:0.9;
-}
-
-.footer-dark .copyright {
-  text-align:center;
-  padding-top:24px;
-  opacity:0.3;
-  font-size:13px;
-  margin-bottom:0;
-}
-
-https://epicbootstrap.com/snippets/footer-dark
