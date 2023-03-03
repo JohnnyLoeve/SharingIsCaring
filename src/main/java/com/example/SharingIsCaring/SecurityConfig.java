@@ -41,7 +41,7 @@ public class SecurityConfig {
                 //Permits resources
                 .requestMatchers("/static/scripts/sicscript.js", "/media/**", "/scripts/**", "/styles/**", "/resources/**", "static/styles/style.css", "static/styles/login.css").permitAll()
                 //permits sites for visitors without login
-                .requestMatchers("/ContactForm","/HomePage", "/LoginPage", "/CreateUser", "/MealOptions", "/MealDetails/**").permitAll()
+                .requestMatchers("/ContactForm","/HomePage", "/LoginPage", "/CreateUser").permitAll()
                 //permits the h2 database
                 .requestMatchers("/h2", "/h2-console", "/h2/**").permitAll()
                 //the rest is only permitted while logged in as ADMIN

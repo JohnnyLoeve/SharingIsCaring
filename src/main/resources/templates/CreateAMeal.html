@@ -141,9 +141,9 @@
 </nav>
 
     <div class="container rounded bg-white mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-4 border-right"></div>
-            <div class="col-md-3 border-right">
+        <div class="row justify-content-center">
+<!--            <div class="col-md-4 border-right"></div>-->
+            <div class="col-md-5">
                 <div class="p-3 py-3">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="text-center" th:fragment="content">
@@ -154,18 +154,18 @@
 
                                 <fieldset>
                                     <div class="row mt-2">
-                                            <label class="labels">Add a meal</label><br>
-                                        <div class="col-md-12"><input type="text" field="*{name}" name="name" class="form-control" placeholder="Add a meal" value="" /> <br></div>
-                                            <label class="pt-1">Describe it</label> <br>
-                                        <div class="col-md-12"><input type="text" field="*{description}" name="description" class="form-control" placeholder="Add a description" value="" /> <br></div>
-                                            <label class="pt-1">What's the price</label> <br>
-                                        <div class="col-md-12"><input type="text" field="*{price}" name="price" class="form-control" placeholder="Add a price" value=""/> <br></div>
-                                            <label class="pt-1">Add a picture of your meal</label> <br>
-                                        <div class="col-md-12"><input type="text" field="*{img}" name="img" class="form-control" placeholder="Add a picture" value=""/> <br></div>
-                                            <label class="pt-1">How would you like to be contacted? </label> <br>
-                                        <div class="col-md-12"><input type="text" field="*{contact}" name="contact" class="form-control" placeholder="Add contact info" value=""/> <br></div>
-                                        <label class="pt-1">Add a meal type </label> <br>
-                                        <div class="col-md-12"><input type="text" field="*{tag}" name="tag" class="form-control" placeholder="ex: vegetarian" value=""/> <br></div>
+                                            <label class="">Add a meal</label><br>
+                                        <div class="col-md-12"><input type="text" field="*{name}" name="name" class="form-control" value="" /> <br></div>
+                                            <label class="">Describe it</label> <br>
+                                        <div class="col-md-12"><input type="text" field="*{description}" name="description" class="form-control"  value="" /> <br></div>
+                                            <label class="">What's the price</label> <br>
+                                        <div class="col-md-12"><input type="text" field="*{price}" name="price" class="form-control" value=""/> <br></div>
+                                            <label class="">Add a picture of your meal</label> <br>
+                                        <div class="col-md-12"><input type="text" field="*{img}" name="img" class="form-control" value=""/> <br></div>
+                                            <label class="">How would you like to be contacted? </label> <br>
+                                        <div class="col-md-12"><input type="text" field="*{contact}" name="contact" class="form-control" value=""/> <br></div>
+                                        <label class="">Add a meal type </label> <br>
+                                        <div class="col-md-12"><input type="text" field="*{tag}" name="tag" class="form-control" value=""/> <br></div>
                                         <input if="${Meal.id != null}" type="hidden" field="*{id}"/> <!--Adds a secret id-->
 
                                         <div class="row mt-3"></div>
